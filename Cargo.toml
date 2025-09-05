@@ -13,6 +13,20 @@ name = "emailnewsletter"
 [dependencies]
 actix-web = "4"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+serde = { version = "1", features = ["derive"] }
+
+# Avoids a long line doing it this way
+[dependencies.sqlx]
+version = "0.8"
+default-features = false
+features = [
+  "runtime-tokio-rustls",
+  "macros",
+  "postgres",
+  "uuid",
+  "chrono",
+  "migrate",
+]
 
 # Used for tests, etc, not included in final application binary
 [dev-dependencies]
