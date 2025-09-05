@@ -1,4 +1,4 @@
-use emailnewsletter::run;
+use emailnewsletter::startup::run;
 use std::net::TcpListener;
 
 #[tokio::main]

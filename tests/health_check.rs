@@ -1,3 +1,4 @@
+use emailnewsletter::startup::run;
 use std::net::TcpListener;
 
 // Spins up an instance of our application
@@ -7,7 +8,7 @@ fn spawn_app() -> String {
 
     // Retrieve port assigned by OS
     let port = listener.local_addr().unwrap().port();
-    let server = emailnewsletter::run(listener).expect("Failed to bind address");
+    let server = run(listener).expect("Failed to bind address");
     let _ = tokio::spawn(server);
 
     // Return application address
