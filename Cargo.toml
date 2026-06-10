@@ -3,8 +3,9 @@ name = "emailnewsletter"
 version = "0.1.0"
 edition = "2024"
 
-#[lib]
-#path = "src/lib.rs"
+# not necesarry just spelling things out
+[lib]
+path = "src/lib.rs"
 
 [[bin]]
 path = "src/main.rs"
@@ -18,7 +19,7 @@ config = "0.14"
 uuid = { version = "1", features = ["v4"] }
 chrono = { version = "0.4.22", default-features = false, features = ["clock"] }
 
-# Avoids a long line doing it this way
+# Avoids a long line (as above) doing it this way
 [dependencies.sqlx]
 version = "0.8"
 default-features = false
